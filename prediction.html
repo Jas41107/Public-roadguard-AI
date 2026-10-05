@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Use RoadGuard AI to estimate accident risk from current road and driver conditions."
+    />
+    <title>RoadGuard AI | Predict Risk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar container" aria-label="Main navigation">
+        <a href="index.html" class="brand" aria-label="RoadGuard AI home">
+          <span class="brand-mark" aria-hidden="true">
+            <span class="shield"></span>
+            <span class="road"></span>
+          </span>
+          <span>RoadGuard AI</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-menu">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="prediction.html" class="nav-link active">Predict Risk</a>
+          <a href="insights.html" class="nav-link">Model Insights</a>
+          <a href="about.html" class="nav-link">About</a>
+        </div>
+
+        <div class="status-pill" aria-live="polite">
+          <span class="status-dot"></span>
+          <span>AI Model: Online</span>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container page-shell">
+      <section class="section-header reveal">
+        <p class="eyebrow">AI risk analysis</p>
+        <h1>Accident Risk Prediction</h1>
+        <p class="lead">Enter the current driving conditions and let the AI analyze the situation.</p>
+      </section>
+
+      <section class="prediction-grid reveal">
+        <div class="glass-card prediction-form-card">
+          <div class="demo-banner">
+            <span class="demo-label">Demo Mode</span>
+            <span class="demo-text">Simulated UI results only. Connect the Flask model for real predictions.</span>
+          </div>
+
+          <form id="risk-form" novalidate>
+            <div class="field-group">
+              <label for="driver-age">Driver Age</label>
+              <div class="slider-wrap">
+                <input id="driver-age" name="driverAge" type="range" min="18" max="80" value="24" />
+                <div class="slider-meta">
+                  <span>18</span>
+                  <strong id="driver-age-value">24 years</strong>
+                  <span>80</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="vehicle-speed">Vehicle Speed</label>
+              <div class="slider-wrap">
+                <input id="vehicle-speed" name="vehicleSpeed" type="range" min="0" max="150" value="72" />
+                <div class="slider-meta">
+                  <span>0 km/h</span>
+                  <strong id="vehicle-speed-value">72 km/h</strong>
+                  <span>150 km/h</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="weather">Weather</label>
+              <select id="weather" name="weather">
+                <option value="Clear">Clear</option>
+                <option value="Rainy">Rainy</option>
+                <option value="Foggy">Foggy</option>
+                <option value="Snowy">Snowy</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="road-condition">Road Condition</label>
+              <select id="road-condition" name="roadCondition">
+                <option value="Dry">Dry</option>
+                <option value="Wet">Wet</option>
+                <option value="Icy">Icy</option>
+                <option value="Poor">Poor</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="vehicle-type">Vehicle Type</label>
+              <select id="vehicle-type" name="vehicleType">
+                <option value="Passenger Car">Passenger Car</option>
+                <option value="SUV">SUV</option>
+                <option value="Truck">Truck</option>
+                <option value="Motorcycle">Motorcycle</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary submit-btn">Analyze Accident Risk</button>
+          </form>
+        </div>
+
+        <div class="glass-card result-card">
+          <div class="result-top">
+            <p class="result-title">AI Analysis Complete</p>
+            <span class="result-badge" id="risk-level-badge">Awaiting Input</span>
+          </div>
+
+          <div class="risk-meter" aria-label="Risk meter">
+            <div class="risk-scale">
+              <span>LOW</span>
+              <span>MEDIUM</span>
+              <span>HIGH</span>
+            </div>
+            <div class="meter-track">
+              <div class="meter-fill" id="meter-fill"></div>
+            </div>
+          </div>
+
+          <div class="result-main">
+            <p class="result-label">Accident Risk</p>
+            <h2 id="final-risk">-</h2>
+          </div>
+
+          <div class="result-meta" id="result-meta" aria-live="polite">
+            <div>
+              <span>Confidence</span>
+              <strong id="confidence-value">--</strong>
+            </div>
+            <div>
+              <span>Driver Age</span>
+              <strong id="display-age">--</strong>
+            </div>
+            <div>
+              <span>Speed</span>
+              <strong id="display-speed">--</strong>
+            </div>
+            <div>
+              <span>Weather</span>
+              <strong id="display-weather">--</strong>
+            </div>
+          </div>
+
+          <div class="explanation-block">
+            <h3>Input Factors Considered</h3>
+            <ul class="factor-list" id="factor-list">
+              <li>Driver age</li>
+              <li>Vehicle speed</li>
+              <li>Weather condition</li>
+              <li>Road condition</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <h3>RoadGuard AI</h3>
+          <p>AI for safer roads.</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="prediction.html">Predict Risk</a>
+          <a href="insights.html">Model Insights</a>
+          <a href="about.html">About</a>
+        </div>
+        <div>
+          <p>Academic AI Applications Project</p>
+          <p>© <span id="current-year"></span> RoadGuard AI</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/prediction.js"></script>
+  </body>
+</html>

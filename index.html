@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="RoadGuard AI predicts vehicle accident risk using machine learning and road safety data."
+    />
+    <title>RoadGuard AI | Predict Road Risk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar container" aria-label="Main navigation">
+        <a href="index.html" class="brand" aria-label="RoadGuard AI home">
+          <span class="brand-mark" aria-hidden="true">
+            <span class="shield"></span>
+            <span class="road"></span>
+          </span>
+          <span>RoadGuard AI</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-menu">
+          <a href="index.html" class="nav-link active">Home</a>
+          <a href="prediction.html" class="nav-link">Predict Risk</a>
+          <a href="insights.html" class="nav-link">Model Insights</a>
+          <a href="about.html" class="nav-link">About</a>
+        </div>
+
+        <div class="status-pill" aria-live="polite">
+          <span class="status-dot"></span>
+          <span>AI Model: Online</span>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero container">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Road safety intelligence</p>
+          <h1>Predict Road Risk Before It Becomes an Accident.</h1>
+          <p class="lead">
+            RoadGuard AI uses machine learning to analyze driver and road conditions and estimate accident risk.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="prediction.html">Check Risk →</a>
+            <a class="btn btn-secondary" href="insights.html">Explore the AI Model</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="vehicle-scene">
+            <div class="scan-line"></div>
+            <div class="car-card">
+              <div class="car-icon" aria-hidden="true">🚗</div>
+              <div class="car-meta">
+                <span>AI ANALYSIS</span>
+                <strong>Road Scan</strong>
+              </div>
+            </div>
+            <div class="road-strip"></div>
+            <div class="data-layers" aria-hidden="true">
+              <span class="dot dot-a"></span>
+              <span class="dot dot-b"></span>
+              <span class="dot dot-c"></span>
+            </div>
+            <div class="mini-panel">
+              <div class="mini-row">
+                <span>Speed</span>
+                <strong>72 km/h</strong>
+              </div>
+              <div class="mini-row">
+                <span>Weather</span>
+                <strong>Clear</strong>
+              </div>
+              <div class="mini-row">
+                <span>Driver</span>
+                <strong>24 yrs</strong>
+              </div>
+              <div class="mini-row risk-row">
+                <span>Risk Level</span>
+                <strong class="risk-low">LOW</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats container reveal">
+        <div class="stat-card">
+          <span class="stat-label">Machine Learning</span>
+          <strong>Random Forest</strong>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Problem Type</span>
+          <strong>Classification</strong>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Dataset</span>
+          <strong>Road Safety Data</strong>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Purpose</span>
+          <strong>Traffic Safety</strong>
+        </div>
+      </section>
+
+      <section class="section container reveal">
+        <div class="section-heading">
+          <p class="eyebrow">How it works</p>
+          <h2>How RoadGuard AI Works</h2>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-card">
+            <span class="step-number">01</span>
+            <h3>Input</h3>
+            <p>Driver and road conditions are entered into the system.</p>
+          </article>
+          <article class="process-card">
+            <span class="step-number">02</span>
+            <h3>Processing</h3>
+            <p>The data is prepared for the machine learning model.</p>
+          </article>
+          <article class="process-card">
+            <span class="step-number">03</span>
+            <h3>AI Analysis</h3>
+            <p>Random Forest analyzes patterns found in the training data.</p>
+          </article>
+          <article class="process-card">
+            <span class="step-number">04</span>
+            <h3>Risk Prediction</h3>
+            <p>The system produces an accident-risk classification result.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <h3>RoadGuard AI</h3>
+          <p>AI for safer roads.</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="prediction.html">Predict Risk</a>
+          <a href="insights.html">Model Insights</a>
+          <a href="about.html">About</a>
+        </div>
+        <div>
+          <p>Academic AI Applications Project</p>
+          <p>© <span id="current-year"></span> RoadGuard AI</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

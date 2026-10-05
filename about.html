@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Learn about the RoadGuard AI academic machine learning project and its road safety objectives."
+    />
+    <title>RoadGuard AI | About</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar container" aria-label="Main navigation">
+        <a href="index.html" class="brand" aria-label="RoadGuard AI home">
+          <span class="brand-mark" aria-hidden="true">
+            <span class="shield"></span>
+            <span class="road"></span>
+          </span>
+          <span>RoadGuard AI</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-menu">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="prediction.html" class="nav-link">Predict Risk</a>
+          <a href="insights.html" class="nav-link">Model Insights</a>
+          <a href="about.html" class="nav-link active">About</a>
+        </div>
+
+        <div class="status-pill" aria-live="polite">
+          <span class="status-dot"></span>
+          <span>AI Model: Online</span>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container page-shell about-page">
+      <section class="section-header reveal">
+        <p class="eyebrow">About the project</p>
+        <h1>About RoadGuard AI</h1>
+      </section>
+
+      <section class="about-grid reveal">
+        <div class="glass-card about-card">
+          <h2>Objective</h2>
+          <p>
+            RoadGuard AI is an academic machine-learning project designed to explore how historical road-safety data can be used to identify patterns associated with accident risk.
+          </p>
+        </div>
+
+        <div class="glass-card about-card">
+          <h2>Algorithm</h2>
+          <p>
+            The project uses a Random Forest Classification model, which combines multiple decision trees to make a final prediction based on features such as age, weather, speed, and road conditions.
+          </p>
+        </div>
+
+        <div class="glass-card about-card">
+          <h2>Dataset</h2>
+          <p>
+            The project is designed around the Kaggle Road Safety dataset and demonstrates how real-world traffic data can support risk analysis and safety awareness.
+          </p>
+        </div>
+
+        <div class="glass-card about-card">
+          <h2>Application</h2>
+          <p>
+            The aim is to support traffic safety, risk awareness, and educational understanding of how machine learning can be applied to accident prediction in practical scenarios.
+          </p>
+        </div>
+      </section>
+
+      <section class="glass-card disclaimer reveal">
+        <h3>Academic Disclaimer</h3>
+        <p>
+          RoadGuard AI provides a machine-learning-based risk estimate and does not guarantee whether an accident will or will not occur. It is intended for educational and research purposes.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <h3>RoadGuard AI</h3>
+          <p>AI for safer roads.</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="prediction.html">Predict Risk</a>
+          <a href="insights.html">Model Insights</a>
+          <a href="about.html">About</a>
+        </div>
+        <div>
+          <p>Academic AI Applications Project</p>
+          <p>© <span id="current-year"></span> RoadGuard AI</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
